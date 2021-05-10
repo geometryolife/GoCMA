@@ -16,6 +16,7 @@ func main() {
 	// 除了返回指针类型结果，还可以直接传入变量地址获取参数值
 	var personalName string
 	flag.StringVar(&personalName, "personalName", "小二", "您的名")
+
 	// 定义一个类型为int，名称为id的命令行参数
 	id := flag.Int("id", 0, "您的ID")
 

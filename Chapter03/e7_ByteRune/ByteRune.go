@@ -1,3 +1,4 @@
+// 分别以byte和rune的方式遍历字符串
 package main
 
 import (
