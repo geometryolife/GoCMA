@@ -37,5 +37,5 @@ func main() {
 
 // 解释:
 // 在进行字节遍历时，Unicode编码的中文字符会被截断，导致中文字符输出乱码
-// byte & rune 的底层类型分别为uint8和uint32
+// byte & rune 的底层类型分别为uint8和int32
 // rune能够处理一切的字符，而byte仅仅局限于处理ASCII字符
