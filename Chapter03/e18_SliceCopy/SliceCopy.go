@@ -1,6 +1,6 @@
-// 为了方便切片的数据快速复制到另一个切片中，Golang提供
-// 了内建的copy函数
-// copy(dst []T, src []T) int
+// 1. 为了方便切片的数据快速复制到另一个切片中，Golang 提供
+// 了内建的 copy 函数:
+// copy(dst, src []T) int
 package main
 
 import "fmt"
@@ -26,7 +26,7 @@ func main() {
 	fmt.Println()
 
 	// 需要保证目标切片的长度不小于来源切片的长度，否则无法完整复制
-	// 使用make必定会创建新的底层数组
+	// 使用 make 必定会创建新的底层数组
 	sli2 := make([]int, 3, 5)
 	num := copy(sli2, sli)
 	fmt.Printf("address of &sli[0]: %p, value of sli: %v\n", &sli[0], sli)
@@ -40,15 +40,18 @@ func main() {
 	fmt.Printf("address of &sli3[0]: %p, value of sli3: %v\n", &sli3[0], sli3)
 }
 
-// address of sli: 0xc000014210
-// address of &sli: 0xc00000c030
-// address of &sli[0]: 0xc000014210
-// address of &sli[1]: 0xc000014218
-// address of &sli[2]: 0xc000014220
-// [1 2 3]
+/*
+>>> Execution Result:
+address of sli: 0xc000016240
+address of &sli: 0xc00000c060
+address of &sli[0]: 0xc000016240
+address of &sli[1]: 0xc000016248
+address of &sli[2]: 0xc000016250
+[1 2 3]
 
-// address of &sli[0]: 0xc000014210, value of sli: [1 2 3]
-// address of &sli2[0]: 0xc000014240, value of sli2: [1 2 3]
-// length of sli2 is 3
-// address of &sli3[0]: 0xc000014240, value of sli3: [1 2]
-// address of &sli3[0]: 0xc00001c0a0, value of sli3: [1 2 10]
+address of &sli[0]: 0xc000016240, value of sli: [1 2 3]
+address of &sli2[0]: 0xc000016270, value of sli2: [1 2 3]
+length of sli2 is 3
+address of &sli3[0]: 0xc000016270, value of sli3: [1 2]
+address of &sli3[0]: 0xc000018180, value of sli3: [1 2 10]
+*/

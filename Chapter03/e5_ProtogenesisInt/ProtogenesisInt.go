@@ -1,7 +1,7 @@
-// 整型: 有符号整型 & 无符号整型(指定长度)
+// 1. 整型: 有符号整型 & 无符号整型(指定长度)
 // int8, int16, int32, int64
 // uint8, uint16, uint32, uint64
-// Golang提供平台自匹配长度的int型和uint型
+// 2. Golang 提供平台自匹配长度的 int 型和 uint 型。
 package main
 
 import (
@@ -17,8 +17,11 @@ func main() {
 	fmt.Printf("d value(uint8) is %v\n", d)
 }
 
-// e value(uint16) is 256
-// d value(uint8) is 0
+/*
+>>> Execution Result:
+e value(uint16) is 256
+d value(uint8) is 0
+*/
 
 // 解释:
 // 高长度类型向低长度类型转换，值会被截断，仅保留低位值，造成转换错误。

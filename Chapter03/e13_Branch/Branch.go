@@ -1,5 +1,5 @@
-// Golang的分支控制与其他语言相似，但更简略
-// 表达式两边可省略()
+// 1. Golang 的分支控制与其他语言相似，但更简略
+// 表达式两边可省略()。
 /*
 if expression1 {
 	branch1
@@ -25,4 +25,7 @@ func main() {
 	}
 }
 
-// You need to pay 10$.
+/*
+>>> Execution Result:
+You need to pay 10$.
+*/

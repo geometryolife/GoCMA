@@ -3,11 +3,11 @@ package main
 import "fmt"
 
 func main() {
-	// 声明一个string类型
+	// 声明一个 string 类型
 	str := "Golang is Good!"
-	// 获取str的指针
+	// 获取 str 的指针
 	strPtr := &str
-	// 获取指针strPtr的指针
+	// 获取指针 strPtr 的指针
 	strPtrPtr := &strPtr
 	// 以此类推，多重指针
 	strPtrPtrPtr := &strPtrPtr

@@ -1,4 +1,4 @@
-// 分别以byte和rune的方式遍历字符串
+// 分别以 byte 和 rune 的方式遍历字符串
 package main
 
 import (
@@ -8,10 +8,10 @@ import (
 
 func main() {
 	f := "Golang编程"
-	// 中文字符在UTF-8编码中占3个字节
-	// 统计字符串的字节长度，byte类型为"uint8"，代表一个ASCII字符
+	// 中文字符在 UTF-8 编码中占3个字节
+	// 统计字符串的字节长度，byte 类型为"uint8"，代表一个 ASCII 字符
 	fmt.Printf("byte lenth of f is %v\n", len(f))
-	// utf8.RuneCountInString()方法统计字符串的Unicode字符数量
+	// utf8.RuneCountInString() 方法统计字符串的 Unicode 字符数量
 	fmt.Printf("rune lenth of f is %v\n", utf8.RuneCountInString(f))
 
 	fmt.Println()
@@ -29,13 +29,16 @@ func main() {
 	}
 }
 
-// byte lenth of f is 12
-// rune lenth of f is 8
+/*
+>>> Execution Result:
+byte lenth of f is 12
+rune lenth of f is 8
 
-// Golangçç¨
-// Golang编程
+Golangçç¨
+Golang编程
+*/
 
 // 解释:
-// 在进行字节遍历时，Unicode编码的中文字符会被截断，导致中文字符输出乱码
-// byte & rune 的底层类型分别为uint8和int32
-// rune能够处理一切的字符，而byte仅仅局限于处理ASCII字符
+// 在进行字节遍历时，Unicode 编码的中文字符会被截断，导致中文字
+// 符输出乱码，byte 与 rune 的底层类型分别为 uint8 和 int32
+// rune 能够处理一切的字符，而 byte 仅仅局限于处理 ASCII 字符

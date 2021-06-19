@@ -17,3 +17,8 @@ func main() {
 	fmt.Printf("My surname is %v and my personal name is %v", surname,
 		personalName)
 }
+
+/*
+>>> Execution Result:
+My surname is Chen and my personal name is Joe
+*/

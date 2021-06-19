@@ -23,10 +23,22 @@ func main() {
 	fmt.Printf("Original c = %v\n", c)
 	fmt.Printf("Original d = %v\n", d)
 
-	// Golang提供多重赋值特性
+	// Golang 提供多重赋值特性
 	// 多重赋值过程中，变量的左值和右值按照从左往右的顺序赋值
 	c, d = d, c
 
 	fmt.Printf("New c = %v\n", c)
 	fmt.Printf("New d = %v\n", d)
 }
+
+/*
+>>> Execution Result:
+Original a = 1
+Original b = 2
+New a = 2
+New b = 1
+Original c = 3
+Original d = 4
+New c = 4
+New d = 3
+*/
