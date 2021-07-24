@@ -98,8 +98,11 @@ func main() {
 	typeOfPtrHero := reflect.TypeOf(&Hero{})
 	fmt.Printf("*Hero's type is %s, kind is %s.\n", typeOfPtrHero,
 		typeOfPtrHero.Kind())
-	fmt.Printf("typeOfPtrHero elem to typeOfHero, Hero's type is %s, kind is %s.\n",
-		typeOfHero, typeOfHero.Kind())
+	// 通过 typeOfPtrHero.Elem，可以获取到 *main.Hero 指针指
+	// 向变量的真实类型 main.Hero 的类型对象
+	typeOfHero2 := typeOfPtrHero.Elem()
+	fmt.Printf("typeOfPtrHero elem to typeOfHero2, Hero's type is %s, kind is %s.\n",
+		typeOfHero2, typeOfHero2.Kind())
 }
 
 /*
@@ -108,5 +111,5 @@ Hero's type is main.Hero, kind is struct.
 *Hero's type is *main.Hero, kind is ptr.
 
 *Hero's type is *main.Hero, kind is ptr.
-typeOfPtrHero elem to typeOfHero, Hero's type is main.Hero, kind is struct.
+typeOfPtrHero elem to typeOfHero2, Hero's type is main.Hero, kind is struct.
 */
